@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release and Assumption of Risk Agreement — TSFLA / Goldcoast Camps</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Dancing Script for Cursive Signature -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@400;500;600;700&family=Times+New+Roman&display=swap" rel="stylesheet">
+    <!-- Font Awesome for crisp UI icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Base screen styling */
+        body {
+            background-color: #cbd5e1;
+            font-family: 'Times New Roman', Times, Georgia, serif;
+            color: #000000;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .ui-sans {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* US Letter Sheet Simulation (8.5in x 11in) */
+        .letter-page {
+            width: 100%;
+            max-width: 8.5in;
+            min-height: 11in;
+            background: #ffffff;
+            margin: 0 auto 2rem auto;
+            padding: 0.72in 0.8in;
+            box-shadow: 0 12px 30px -5px rgba(15, 23, 42, 0.18), 0 4px 10px -2px rgba(15, 23, 42, 0.08);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 680px) {
+            .letter-page {
+                padding: 1.5rem 1.25rem;
+                min-height: auto;
+            }
+        }
+
+        /* Legal document typography */
+        .legal-body {
+            font-size: 11.2pt;
+            line-height: 1.48;
+            color: #000000;
+        }
+
+        .legal-clause {
+            display: grid;
+            grid-template-columns: 0.48in 1fr;
+            gap: 0.08in;
+            margin-bottom: 0.16in;
+            text-align: justify;
+        }
+
+        @media (max-width: 640px) {
+            .legal-clause {
+                grid-template-columns: 2.2rem 1fr;
+            }
+        }
+
+        /* Inline Underlined Fillable Form Inputs */
+        .inline-blank {
+            display: inline-block;
+            border: none;
+            border-bottom: 1px solid #000000;
+            background-color: rgba(219, 234, 254, 0.55); /* Subtle fillable tint on screen */
+            font-family: 'Inter', sans-serif;
+            font-size: 10.2pt;
+            font-weight: 500;
+            color: #0f172a;
+            padding: 0 5px 1px 5px;
+            margin: 0 2px;
+            border-radius: 2px 2px 0 0;
+            transition: background-color 0.15s ease, border-color 0.15s ease;
+            vertical-align: baseline;
+        }
+
+        .inline-blank:hover {
+            background-color: rgba(191, 219, 254, 0.75);
+        }
+
+        .inline-blank:focus {
+            outline: none;
+            background-color: rgba(239, 246, 255, 0.95);
+            border-bottom: 1.5px solid #1d4ed8;
+        }
+
+        .inline-blank::placeholder {
+            color: #64748b;
+            font-weight: 400;
+            font-size: 9pt;
+            font-style: italic;
+        }
+
+        /* Signature Field Styling */
+        .sig-field {
+            border: none;
+            border-bottom: 1px solid #000000;
+            background-color: rgba(219, 234, 254, 0.55);
+            color: #0f172a;
+            padding: 1px 6px;
+            border-radius: 2px 2px 0 0;
+            transition: background-color 0.15s ease;
+        }
+
+        .sig-field:focus {
+            outline: none;
+            background-color: rgba(239, 246, 255, 0.95);
+            border-bottom: 1.5px solid #1d4ed8;
+        }
+
+        .sig-field::placeholder {
+            font-family: 'Inter', sans-serif;
+            font-size: 9pt;
+            font-style: italic;
+            color: #64748b;
+        }
+
+        .sig-cursive {
+            font-family: 'Dancing Script', cursive;
+            font-size: 17pt;
+            font-weight: 700;
+            color: #1e3a8a;
+            line-height: 1.1;
+        }
+
+        .sig-print {
+            font-family: 'Inter', sans-serif;
+            font-size: 10.5pt;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        /* Signature Draw Canvas Overlay */
+        .sig-canvas {
+            border-bottom: 1px solid #000000;
+            background-color: rgba(219, 234, 254, 0.45);
+            cursor: crosshair;
+            touch-action: none;
+            border-radius: 2px 2px 0 0;
+        }
+
+        /* Exact Print Styles: Pure 2-Page US Letter Output */
+        @media print {
+            @page {
+                size: letter portrait;
+                margin: 0.55in 0.72in;
+            }
+
+            body {
+                background: #ffffff !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .letter-page {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-height: 9.85in !important;
+                height: 9.85in !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .letter-page:last-of-type {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            /* Remove fillable tint & placeholders for clean official paper look */
+            .inline-blank,
+            .sig-field,
+            .sig-canvas {
+                background-color: transparent !important;
+                border-bottom: 1px solid #000000 !important;
+                border-radius: 0 !important;
+            }
+
+            .inline-blank::placeholder,
+            .sig-field::placeholder {
+                color: transparent !important;
+            }
+        }
+    </style>
+</head>
+<body class="pb-12">
+
+    <!-- Floating Top Utility Bar (Hidden when printing) -->
+    <header class="no-print ui-sans sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md text-white border-b border-slate-700 shadow-lg mb-8">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-sm shrink-0">
+                    <i class="fa-solid fa-file-contract text-sm"></i>
+                </div>
+                <div>
+                    <h1 class="text-sm font-semibold tracking-tight leading-none">TSFLA — Goldcoast Release Form</h1>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Fill out all underlined blanks below, then click Print / Save as PDF</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2">
+                <!-- Toggle Signature Script -->
+                <button type="button" id="toggleSigFontBtn" onclick="toggleSignatureScript()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-xs font-medium text-slate-100 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-pen-nib text-blue-400"></i>
+                    <span id="sigFontLabel">Signature: Cursive Script</span>
+                </button>
+
+                <!-- Clear Form -->
+                <button type="button" onclick="openClearModal()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-rose-950/70 hover:border-rose-700 border border-slate-600 text-xs font-medium text-slate-200 hover:text-rose-200 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-eraser"></i>
+                    <span>Clear Form</span>
+                </button>
+
+                <!-- Print / Save as PDF -->
+                <button type="button" onclick="triggerPrint()" class="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-xs font-semibold text-white shadow-sm transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-print"></i>
+                    <span>Print / Save as PDF</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Form Container -->
+    <form id="releaseForm" onsubmit="event.preventDefault();" class="px-3 sm:px-6">
+
+        <!-- ==================== PAGE 1 ==================== -->
+        <section class="letter-page" aria-label="Page 1">
+            <div>
+                <!-- Document Title -->
+                <h2 class="text-center font-bold uppercase tracking-wide text-[14pt] leading-snug mb-6 text-black">
+                    RELEASE AND ASSUMPTION OF RISK AGREEMENT
+                </h2>
+
+                <!-- Opening Paragraph with Inline Underlined Fillable Fields -->
+                <div class="legal-body text-justify mb-5">
+                    <span>I, the undersigned, </span>
+                    <input type="text" id="fullName" class="inline-blank w-64 sm:w-72" placeholder="Full Legal Name" aria-label="Full Legal Name">,
+                    <span> of </span>
+                    <input type="text" id="fullAddress" class="inline-blank w-full sm:w-[3.4in] mt-1 sm:mt-0" placeholder="Street Address, City, State, ZIP" aria-label="Your Address">
+                    <span> (your address), do agree and promise the following for and in consideration of my participation in the Team building program by Team Solutions Florida L.L.C., Goldcoast Camps, Chabad of Parkland, and their respective employees and agents, or otherwise to be held on </span>
+                    <input type="text" id="programDate" class="inline-blank w-52 sm:w-60" placeholder="Date(s) of Program" aria-label="Date of Program">
+                    <span> and all activities related thereto (the Program). The Program could be indoors or outdoors surroundings or on the water.</span>
+                </div>
+
+                <!-- Clauses I through V -->
+                <div class="legal-body mt-4">
+                    <!-- Clause I -->
+                    <div class="legal-clause">
+                        <div class="font-normal">I.</div>
+                        <div>
+                            My participation in the Program is voluntary. I have chosen to participate in the Program because of the learning experiences I will gain. I acknowledge that, in the course of my participation in the Program, I may be exposed to risks, some of which are known and some of which are unknown, which may result in property damage or loss, as well as personal or bodily injury which could be painful, permanently disfiguring, debilitating and even fatal. I voluntarily assume full responsibility for all such risks including, but not limited to, sickness, bad weather, broken bones, partial and/or total paralysis, other ailments that could cause serious disability, drowning, and/or death. I further expressly assume full responsibility for any risk of bodily injury, death, or property damage due to the negligence of Team Solutions Florida L.L.C. and Goldcoast Camps, Chabad of Parkland and their respective employees and agents, or otherwise.
+                        </div>
+                    </div>
+
+                    <!-- Clause II -->
+                    <div class="legal-clause">
+                        <div class="font-normal">II.</div>
+                        <div>
+                            I represent that I have no medical condition that would prevent me from participating in the activities associated with the Program, I understand that it is my choice to participate in the Program and that I choose at which level of physical difficulty that I will participate in.
+                        </div>
+                    </div>
+
+                    <!-- Clause III -->
+                    <div class="legal-clause">
+                        <div class="font-normal">III.</div>
+                        <div>
+                            I acknowledge that Team Solutions Florida L.L.C., Goldcoast Camps, Chabad of Parkland and their respective officers, employees, and agents are not responsible for losses or expenses suffered by me due to delays, changes in itinerary, changes in the content of Program, or other matters which are beyond their control.
+                        </div>
+                    </div>
+
+                    <!-- Clause IV -->
+                    <div class="legal-clause">
+                        <div class="font-normal">IV.</div>
+                        <div>
+                            I, for myself, my heirs, personal representatives and assigns voluntarily agree to release, waive, discharge and relinquish and to indemnify and hold harmless Team Solutions Florida L.L.C. from and against all claims, suits, or causes of action for bodily injury, property damage, wrongful death, loss of services or otherwise which may arise from my participation in the trip and its related activities or from personal unrelated activities whether the same should arise by reason of negligence of anyone organizing or participating in the trip or otherwise. I specifically understand that I am releasing, discharging, and waiving any claims or actions that I may have presently or in the future for the negligent acts or other conduct by Team Solutions Florida L.L.C. and their respective employees and agents, or otherwise. I agree that, under no circumstances, will I or anyone claiming through me, prosecute or present any claims for personal or bodily injury property damage or loss, or wrongful death against Team Solutions Florida L.L.C., Goldcoast Camps, Chabad of Parkland, and their respective employees and agents, or othwise.
+                        </div>
+                    </div>
+
+                    <!-- Clause V -->
+                    <div class="legal-clause">
+                        <div class="font-normal">V.</div>
+                        <div>
+                            I further expressly agree that this Release and Assumption of Risk Agreement is intended to be as broad and as inclusive as the laws of the State of Florida will allow, and that if any portion thereof is held to be invalid, it is agreed that the balance shall, notwithstanding the invalid portion, will continue in full legal force and effect.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subtle Screen-Only Page Indicator -->
+            <div class="no-print ui-sans text-right text-[11px] text-slate-400 pt-2 border-t border-dashed border-slate-200">
+                Page 1 of 2
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 2 ==================== -->
+        <section class="letter-page" aria-label="Page 2">
+            <div>
+                <!-- All-Caps Acknowledgment Paragraph -->
+                <p class="legal-body font-bold text-justify uppercase mb-8">
+                    I HAVE READ THE ABOVE RELEASE AND ASSUMPTION OF RISK AGREEMENT AND, BY SIGNING IT, AGREE THAT IT IS MY INTENTION TO EXEMPT AND RELIEVE TEAM SOLUTIONS FLORIDA L.L.C., GOLDCOAST CAMP, CHABAD OF PARKLAND AND THEIR RESPECTIVE EMPLOYEES AND AGENTS, FROM LIABILITY FOR PERSONAL LIABILITY, PROPERTY DAMAGE, OR WRONGFUL DEATH CAUSED BY NEGLIGENCE OR ANY OTHER CAUSE OF ACTION.
+                </p>
+
+                <!-- Signed and Dated Line -->
+                <div class="legal-body mb-8">
+                    <span>Signed and dated this </span>
+                    <input type="text" id="signDay" class="inline-blank w-24 text-center" placeholder="Day (e.g. 13th)" aria-label="Day">
+                    <span> day of </span>
+                    <input type="text" id="signMonth" class="inline-blank w-36 text-center" placeholder="Month" aria-label="Month">
+                    <span>, 20</span>
+                    <input type="text" id="signYear" maxlength="2" class="inline-blank w-12 text-center" placeholder="YY" aria-label="Two-digit Year">
+                </div>
+
+                <!-- Adult Participant Signature Block -->
+                <div class="legal-body mb-7">
+                    <div class="font-bold mb-3">PARTICIPANT*:</div>
+
+                    <!-- Signature Row (Supports Typed Cursive/Print OR Hand-Drawn Pad) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-[1.45in_1fr] items-end gap-2 mb-3.5">
+                        <label for="participantSigInput" class="font-normal">Signature:</label>
+                        <div>
+                            <!-- Mode Toggle Pill (Screen Only) -->
+                            <div class="no-print ui-sans flex items-center justify-end gap-2 mb-1">
+                                <button type="button" onclick="setSigMode('participant', 'type')" id="participantTypeBtn" class="text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-semibold">Type Signature</button>
+                                <button type="button" onclick="setSigMode('participant', 'draw')" id="participantDrawBtn" class="text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 hover:bg-slate-200 font-medium">Draw Pad</button>
+                                <button type="button" onclick="clearCanvas('participantCanvas')" id="participantClearPadBtn" class="hidden text-[10px] px-2 py-0.5 rounded bg-rose-50 text-rose-600 hover:bg-rose-100 font-medium">Clear Pad</button>
+                            </div>
+
+                            <!-- Typed Signature Input -->
+                            <input type="text" id="participantSigInput" class="sig-field sig-cursive w-full sm:w-80" placeholder="Type full name to sign...">
+
+                            <!-- Hand-Drawn Canvas (Hidden by default) -->
+                            <canvas id="participantCanvas" width="320" height="46" class="sig-canvas hidden w-full sm:w-80"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Print Name Row -->
+                    <div class="grid grid-cols-1 sm:grid-cols-[1.45in_1fr] items-end gap-2 mb-3.5">
+                        <label for="participantPrintName" class="font-normal">Print Name:</label>
+                        <input type="text" id="participantPrintName" class="inline-blank w-full sm:w-80 !mx-0" placeholder="Printed Full Name">
+                    </div>
+
+                    <!-- E-mail Address Row -->
+                    <div class="grid grid-cols-1 sm:grid-cols-[1.45in_1fr] items-end gap-2">
+                        <label for="participantEmail" class="font-normal">E-mail Address:</label>
+                        <input type="email" id="participantEmail" class="inline-blank w-full sm:w-80 !mx-0" placeholder="participant@example.com">
+                    </div>
+                </div>
+
+                <!-- Minor Footnote -->
+                <p class="legal-body text-[10.5pt] mb-6">
+                    * If the participant is under 18 years of age, the parent or guardian must sign on behalf of the participant.
+                </p>
+
+                <!-- Parent / Legal Guardian Paragraph -->
+                <div class="legal-body text-justify mb-7">
+                    <span>I state that I am the legal guardian or parent of (name of child) </span>
+                    <input type="text" id="childName" class="inline-blank w-64 sm:w-72" placeholder="Child's Full Name" aria-label="Child's Full Name">
+                    <span> (Participant). I am signing to approve the Participant's participation in the Program. By signing, I agree that the Participant and I are bound by the terms of this Release and Assumption of Risk Agreement.</span>
+                </div>
+
+                <!-- Parent / Guardian Signature Block -->
+                <div class="legal-body mb-6">
+                    <div class="font-bold mb-3">PARTICIPANT*:</div>
+
+                    <!-- Guardian Signature Row -->
+                    <div class="grid grid-cols-1 sm:grid-cols-[1.45in_1fr] items-end gap-2 mb-3.5">
+                        <label for="guardianSigInput" class="font-normal">Signature:</label>
+                        <div>
+                            <!-- Mode Toggle Pill (Screen Only) -->
+                            <div class="no-print ui-sans flex items-center justify-end gap-2 mb-1">
+                                <button type="button" onclick="setSigMode('guardian', 'type')" id="guardianTypeBtn" class="text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-semibold">Type Signature</button>
+                                <button type="button" onclick="setSigMode('guardian', 'draw')" id="guardianDrawBtn" class="text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 hover:bg-slate-200 font-medium">Draw Pad</button>
+                                <button type="button" onclick="clearCanvas('guardianCanvas')" id="guardianClearPadBtn" class="hidden text-[10px] px-2 py-0.5 rounded bg-rose-50 text-rose-600 hover:bg-rose-100 font-medium">Clear Pad</button>
+                            </div>
+
+                            <!-- Typed Signature Input -->
+                            <input type="text" id="guardianSigInput" class="sig-field sig-cursive w-full sm:w-80" placeholder="Parent / Guardian signature...">
+
+                            <!-- Hand-Drawn Canvas (Hidden by default) -->
+                            <canvas id="guardianCanvas" width="320" height="46" class="sig-canvas hidden w-full sm:w-80"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Guardian Print Name Row -->
+                    <div class="grid grid-cols-1 sm:grid-cols-[1.45in_1fr] items-end gap-2">
+                        <label for="guardianPrintName" class="font-normal">Print Name:</label>
+                        <input type="text" id="guardianPrintName" class="inline-blank w-full sm:w-80 !mx-0" placeholder="Parent / Guardian Printed Name">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 2 Official Footer -->
+            <footer class="text-right text-[10pt] text-black pt-4">
+                Page 2 of 2
+            </footer>
+        </section>
+
+    </form>
+
+    <!-- Toast Notification Banner (Hidden on Print) -->
+    <div id="toastBanner" class="no-print ui-sans fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900 text-white px-4 py-2.5 rounded-lg shadow-xl border border-slate-700 flex items-center gap-2.5 text-xs font-medium">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toastMessage">Ready</span>
+    </div>
+
+    <!-- Custom Clear Confirmation Modal (Replaces native confirm()) -->
+    <div id="clearModal" class="no-print ui-sans hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-sm w-full p-5 shadow-2xl border border-slate-200">
+            <div class="flex items-center gap-3 text-rose-600 mb-2">
+                <div class="w-9 h-9 rounded-full bg-rose-100 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-eraser"></i>
+                </div>
+                <h3 class="text-base font-bold text-slate-900">Clear All Fields?</h3>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-5">
+                This will erase all entered names, addresses, dates, and signatures on both pages of the release form.
+            </p>
+            <div class="flex items-center justify-end gap-2">
+                <button type="button" onclick="closeClearModal()" class="px-3.5 py-2 rounded-lg border border-slate-300 text-xs font-medium text-slate-700 hover:bg-slate-50 transition">
+                    Cancel
+                </button>
+                <button type="button" onclick="confirmClearForm()" class="px-3.5 py-2 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold transition">
+                    Yes, Clear Form
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isCursiveScript = true;
+
+        /**
+         * Initialize date helpers and drawing canvases on load.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            prefillCurrentDateParts();
+            initSignatureCanvas('participantCanvas');
+            initSignatureCanvas('guardianCanvas');
+        });
+
+        /**
+         * Pre-populates Day, Month, and 2-digit Year with today's date (editable by user).
+         */
+        function prefillCurrentDateParts() {
+            const now = new Date();
+            const dayNum = now.getDate();
+            const monthNames = [
+                'January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'
+            ];
+            const yearTwoDigit = String(now.getFullYear()).slice(-2);
+
+            const dayInput = document.getElementById('signDay');
+            const monthInput = document.getElementById('signMonth');
+            const yearInput = document.getElementById('signYear');
+
+            if (dayInput && !dayInput.value) dayInput.value = getOrdinalSuffix(dayNum);
+            if (monthInput && !monthInput.value) monthInput.value = monthNames[now.getMonth()];
+            if (yearInput && !yearInput.value) yearInput.value = yearTwoDigit;
+        }
+
+        /**
+         * Returns ordinal day string (e.g., 1 -> "1st", 13 -> "13th").
+         */
+        function getOrdinalSuffix(n) {
+            const s = ['th', 'st', 'nd', 'rd'];
+            const v = n % 100;
+            return n + (s[(v - 20) % 10] || s[v] || s[0]);
+        }
+
+        /**
+         * Toggles typed signature font between Cursive Script and Standard Print.
+         */
+        function toggleSignatureScript() {
+            isCursiveScript = !isCursiveScript;
+            const sigInputs = document.querySelectorAll('.sig-field');
+            const label = document.getElementById('sigFontLabel');
+
+            sigInputs.forEach(input => {
+                if (isCursiveScript) {
+                    input.classList.add('sig-cursive');
+                    input.classList.remove('sig-print');
+                } else {
+                    input.classList.remove('sig-cursive');
+                    input.classList.add('sig-print');
+                }
+            });
+
+            label.textContent = isCursiveScript ? 'Signature: Cursive Script' : 'Signature: Standard Print';
+            showToast(isCursiveScript ? 'Switched to Cursive Signature Script' : 'Switched to Standard Print Signature');
+        }
+
+        /**
+         * Switches a signature block between Typed input and Hand-Drawn Canvas pad.
+         */
+        function setSigMode(prefix, mode) {
+            const inputEl = document.getElementById(`${prefix}SigInput`);
+            const canvasEl = document.getElementById(`${prefix}Canvas`);
+            const typeBtn = document.getElementById(`${prefix}TypeBtn`);
+            const drawBtn = document.getElementById(`${prefix}DrawBtn`);
+            const clearBtn = document.getElementById(`${prefix}ClearPadBtn`);
+
+            if (mode === 'draw') {
+                inputEl.classList.add('hidden');
+                canvasEl.classList.remove('hidden');
+                clearBtn.classList.remove('hidden');
+
+                drawBtn.className = 'text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-semibold';
+                typeBtn.className = 'text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 hover:bg-slate-200 font-medium';
+            } else {
+                canvasEl.classList.add('hidden');
+                clearBtn.classList.add('hidden');
+                inputEl.classList.remove('hidden');
+
+                typeBtn.className = 'text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-semibold';
+                drawBtn.className = 'text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 hover:bg-slate-200 font-medium';
+            }
+        }
+
+        /**
+         * Initializes mouse and touch drawing on a signature canvas.
+         */
+        function initSignatureCanvas(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let drawing = false;
+
+            ctx.strokeStyle = '#1e3a8a';
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            function getCoords(e) {
+                const rect = canvas.getBoundingClientRect();
+                const scaleX = canvas.width / rect.width;
+                const scaleY = canvas.height / rect.height;
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                return {
+                    x: (clientX - rect.left) * scaleX,
+                    y: (clientY - rect.top) * scaleY
+                };
+            }
+
+            function startDraw(e) {
+                drawing = true;
+                const pos = getCoords(e);
+                ctx.beginPath();
+                ctx.moveTo(pos.x, pos.y);
+            }
+
+            function draw(e) {
+                if (!drawing) return;
+                if (e.cancelable) e.preventDefault();
+                const pos = getCoords(e);
+                ctx.lineTo(pos.x, pos.y);
+                ctx.stroke();
+            }
+
+            function endDraw() {
+                drawing = false;
+            }
+
+            canvas.addEventListener('mousedown', startDraw);
+            canvas.addEventListener('mousemove', draw);
+            window.addEventListener('mouseup', endDraw);
+
+            canvas.addEventListener('touchstart', startDraw, { passive: false });
+            canvas.addEventListener('touchmove', draw, { passive: false });
+            canvas.addEventListener('touchend', endDraw);
+        }
+
+        /**
+         * Clears a drawn signature canvas.
+         */
+        function clearCanvas(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        /**
+         * Triggers the browser Print / Save as PDF dialog.
+         */
+        function triggerPrint() {
+            if (document.activeElement) {
+                document.activeElement.blur();
+            }
+            window.print();
+        }
+
+        /**
+         * Modal controls for clearing the form.
+         */
+        function openClearModal() {
+            document.getElementById('clearModal').classList.remove('hidden');
+        }
+
+        function closeClearModal() {
+            document.getElementById('clearModal').classList.add('hidden');
+        }
+
+        function confirmClearForm() {
+            const form = document.getElementById('releaseForm');
+            form.querySelectorAll('input').forEach(input => {
+                input.value = '';
+            });
+            clearCanvas('participantCanvas');
+            clearCanvas('guardianCanvas');
+            prefillCurrentDateParts();
+            closeClearModal();
+            showToast('All form fields cleared');
+        }
+
+        /**
+         * Displays a non-intrusive toast notification.
+         */
+        let toastTimer;
+        function showToast(msg) {
+            const banner = document.getElementById('toastBanner');
+            const msgEl = document.getElementById('toastMessage');
+            msgEl.textContent = msg;
+            banner.classList.remove('translate-y-20', 'opacity-0');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                banner.classList.add('translate-y-20', 'opacity-0');
+            }, 2600);
+        }
+    </script>
+</body>
+</html>
